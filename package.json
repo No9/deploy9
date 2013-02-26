@@ -1,0 +1,17 @@
+{
+  "name": "rumours-deploy",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nearform/rumours-deploy",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nearform/rumours-deploy.git"
+  },
+  "dependencies": {
+    "ssh2": "0.1.13",
+    "pkgcloud": "0.6.7-1"
+  },
+
+  "devDependencies": {
+  },
+  "author": "Anthony Whalley <anton.whalley@nearform.com> (http://nearform.com)"
+}
