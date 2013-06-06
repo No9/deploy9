@@ -1,25 +1,44 @@
-# rumours-deploy
+# deploy9
 
-A library to automatically deploy a rumours database to your favourite cloud provider
+A library to automatically deploy commands to joyent
+
+## Install 
+
+```
+npm install deploy9 -g
+```
 
 ## Usage 
 
-Create a module file for your smartOS provider called keyfile.js.
+This lib Assumes your system is already capable of accessing Joyent from the commandline with a non-password protected key.
+
+If you keyfile is password protected see Generating Non-Password Keys below
 
 ```
-module.exports = {
-   "provider":"joyent",
-   "username":"anton",
-   "password":"password"
-}
+deploy9 COMMANDTORUN -a USERNAME -i NAMEOFKEYONSERVER  -k YOURPRIVATEKEY
 ```
-Create a javascript file for executing rumours-deploy
+
+Example 
 
 ```
-var commands = "echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config && git clone git@github.com:nrform/salesteam.git rumours-service && cd rumours-service &&  git submodule init && git submodule update && npm install && npm start";
-var opts = require('keyfile.js')
-var deploy = require('../')(opts, commands);
+deploy9 ls -a nearform -i /nearform/keys/nearform_joyent_rsa  -k nearform_joyent_rsa
 ```
+
+## Generating Non-Password Keys 
+
+Create an key file that is not password protected 
+
+```
+ssh-keygen -t rsa -C "your-email@email.con"
+```
+
+## MAKE SURE THAT YOU SPECIFIY A DIFFERENT LOCATION THAN THE DEFAULT
+
+Don't enter a password. 
+This is required as ssh2 has no way of prompting for passwords as yet. 
+
+Copy the .pub up to your Joyent public key store 
+
 
 ## TODO
 
@@ -27,8 +46,7 @@ var deploy = require('../')(opts, commands);
 
 2. Improve error handling 
 
-3. More Tests
+## Licence
 
-
-
+MIT
 

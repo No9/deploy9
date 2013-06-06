@@ -1,17 +1,24 @@
 {
-  "name": "rumours-deploy",
-  "version": "0.0.0",
-  "homepage": "https://github.com/nearform/rumours-deploy",
+  "name": "deploy9",
+  "version": "0.1.0",
+  "homepage": "https://github.com/no9/deploy9",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nearform/rumours-deploy.git"
+    "url": "git://github.com/no9/deploy9.git"
   },
   "dependencies": {
+    "command9": "*",
     "ssh2": "0.1.13",
-    "pkgcloud": "0.6.7-1"
+    "pkgcloud": "0.8.1",
+    "colors": "*",
+    "optimist": "0.2.x"
   },
 
   "devDependencies": {
+  },
+
+  "bin": {
+    "deploy9": "./bin/deploy9"
   },
   "author": "Anthony Whalley <anton.whalley@nearform.com> (http://nearform.com)"
 }

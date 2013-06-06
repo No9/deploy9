@@ -1,1 +1,0 @@
-var command = require('../lib/command')("uptime", "165.225.155.230");
